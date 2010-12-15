@@ -18,7 +18,8 @@ add_library(
 
 # Set link libraries
 # -------------------
-# target_link_libraries(${XNCORE_LIB_NAME})
+target_link_libraries(${XNCORE_LIB_NAME} ${OPENNI_LIB_NAME})
+#target_link_libraries(${NIMMOCKNODES_LIB_NAME} ${OPENNI_LIB_NAME})
 
 # Set the search paths for this linked lib.
 #

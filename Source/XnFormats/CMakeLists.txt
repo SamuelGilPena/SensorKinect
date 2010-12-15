@@ -18,6 +18,12 @@ add_library(
 	${${XNFORMAT_LIB_NAME}_sources}
 )
 
+target_link_libraries(
+	${XNFORMAT_LIB_NAME}
+	${LIBJPEG_LIB_NAME}
+	${XNCORE_LIB_NAME}
+)
+
 # Set install dir
 # ---------------
 install(

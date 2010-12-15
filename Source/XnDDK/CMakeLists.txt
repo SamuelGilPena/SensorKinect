@@ -17,6 +17,14 @@ add_library(
 	${${XNDDK_LIB_NAME}_sources}
 )
 
+target_link_libraries(
+	${XNDDK_LIB_NAME}
+	${XNCORE_LIB_NAME}
+	${OPENNI_NIMCODECS_LIB_NAME}
+	${LIBJPEG_LIB_NAME}
+	${XNFORMAT_LIB_NAME}
+)
+message( ${OPENNI_NIMCODECS_LIB_NAME})
 # Set install dir
 # ---------------
 install(

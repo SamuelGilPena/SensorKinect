@@ -18,6 +18,13 @@ add_library(
 	${${XNDEVICESENSOR_LIB_NAME}_sources}
 )
 
+target_link_libraries(
+        ${XNDEVICESENSOR_LIB_NAME}
+        ${XNFORMAT_LIB_NAME}
+        ${XNDDK_LIB_NAME}
+)
+
+
 # Set install dir
 # ---------------
 install(

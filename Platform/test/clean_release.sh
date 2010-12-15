@@ -6,3 +6,4 @@ rm -rf Source
 rm -rf CMakeFiles
 rm XnSensorServer
 rm cmake_install.cmake
+rm *.dylib
