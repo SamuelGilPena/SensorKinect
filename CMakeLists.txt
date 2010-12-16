@@ -16,7 +16,7 @@ endif()
 # ---------------------
 # @todo create find modules for openni!
 #set(OPENNI_BASE_DIR "/home/roxlu/Documents/programming/c++/openni_fork/")
-set(OPENNI_BASE_DIR "/Users/roxlu/Documents/programming/c++/__PLAYGROUND__/openni/")
+set(OPENNI_BASE_DIR "/Users/diederickhuijbers/Documents/programming/c++/__PLAYGROUND__/openni/")
 
 set(OPENNI_LIB_NAME "${OPENNI_BASE_DIR}/Platform/Mac/Bin/Release/libOpenNI.dylib")
 set(XNCORE_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Include/")
@@ -35,7 +35,7 @@ set(OPENNI_NIMCODECS_LIB_NAME "${OPENNI_BASE_DIR}Platform/Mac/Bin/Release/libnim
 
 # @todo make a find which searches for OpenNI, libJPEG and TinyXML.so 
 #set(LIBJPEG_LIB_NAME "/home/roxlu/Documents/programming/c++/sensorkinect/Platform/test/libJPEG.so")
-set(LIBJPEG_LIB_NAME "/Users/roxlu/Documents/programming/c++/__PLAYGROUND__/openni/Platform/Mac/Bin/Release/libJPEG.dylib")
+set(LIBJPEG_LIB_NAME "/Users/diederickhuijbers/Documents/programming/c++/__PLAYGROUND__/openni/Platform/Mac/Bin/Release/libJPEG.dylib")
 
 # Add the sub-cmakefiles.txt
 # --------------------------
