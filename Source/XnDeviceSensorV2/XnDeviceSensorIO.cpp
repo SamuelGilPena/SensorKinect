@@ -402,6 +402,18 @@ XnStatus XnSensorIO::GetNumOfSensors(XnUInt32* pnNumSensors)
 		nRetVal = xnUSBIsDevicePresent(XN_SENSOR_VENDOR_ID, XN_SENSOR_2_0_PRODUCT_ID, USB_DEVICE_EXTRA_PARAM, &bIsPresent);
 		XN_IS_STATUS_OK(nRetVal);
 	}
+	
+	if (!bIsPresent)
+	{
+		// Find the KINECT
+		nRetVal = xnUSBIsDevicePresent(
+				 XN_SENSOR_VENDOR_ID_KINECT
+				,XN_SENSOR_KINECT_PRODUCT_ID
+				,USB_DEVICE_EXTRA_PARAM
+				,&bIsPresent
+		);
+		XN_IS_STATUS_OK(nRetVal);
+	}
 
 	if (bIsPresent == TRUE)
 	{
