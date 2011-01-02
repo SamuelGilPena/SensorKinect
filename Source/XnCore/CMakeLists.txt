@@ -19,15 +19,17 @@ add_library(
 # Set link libraries
 # -------------------
 target_link_libraries(${XNCORE_LIB_NAME} ${OPENNI_LIB_NAME})
-#target_link_libraries(${NIMMOCKNODES_LIB_NAME} ${OPENNI_LIB_NAME})
-
-# Set the search paths for this linked lib.
-#
+if(SENSOR_PLATFORM_MAC)
+	set_target_properties(${XNCORE_LIB_NAME} PROPERTIES 
+		BUILD_WITH_INSTALL_RPATH ON
+		INSTALL_NAME_DIR ${INSTALL_NAME_VALUE}
+	)
+endif()
 
 # Set install dir
 # ---------------
 install(
 	TARGETS ${XNCORE_LIB_NAME}
-	LIBRARY DESTINATION .
-	RUNTIME DESTINATION .
+	LIBRARY DESTINATION ${LIB_INSTALL_PATH}
+	RUNTIME DESTINATION ${BIN_INSTALL_PATH}
 )

@@ -4,7 +4,8 @@ project(SensorKinect)
 
 # Options
 # -------
-option(CREATE_TEST_BUILD "Create a test build which you do no have to install" ON)
+option(CREATE_TEST_BUILD "Create a test build which you do no have to install" OFF)
+option(CREATE_OF_BUILD "Create a build for the ofxOpenNI addon" OFF)
 
 # Check the system
 # ----------------
@@ -21,10 +22,33 @@ endif()
 # @todo create find modules for openni!
 if(CREATE_TEST_BUILD)
 	set(OPENNI_BASE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../OpenNI/")
-	set(OPENNI_NIMCODECS_LIB_NAME "${CMAKE_CURRENT_SOURCE_DIR}/../OpenNI_TEST/libnimCodecs.dylib")  
-	set(OPENNI_LIB_NAME "${CMAKE_CURRENT_SOURCE_DIR}/../OpenNI_TEST/libOpenNI.dylib")
-	set(LIBJPEG_LIB_NAME "${CMAKE_CURRENT_SOURCE_DIR}/../OpenNI_TEST/libJPEG.dylib")
-	set(OPENNI_NIMCODECS_LIB_NAME "${CMAKE_CURRENT_SOURCE_DIR}/../OpenNI_TEST/libnimCodecs.dylib")
+	set(OPENNI_NIMCODECS_LIB_NAME "${CMAKE_CURRENT_SOURCE_DIR}/../OpenNI_TEST/lib/libnimCodecs.dylib")  
+	set(OPENNI_LIB_NAME "${CMAKE_CURRENT_SOURCE_DIR}/../OpenNI_TEST/lib/libOpenNI.dylib")
+	set(LIBJPEG_LIB_NAME "${CMAKE_CURRENT_SOURCE_DIR}/../OpenNI_TEST/lib/libJPEG.dylib")
+	set(OPENNI_NIMCODECS_LIB_NAME "${CMAKE_CURRENT_SOURCE_DIR}/../OpenNI_TEST/lib/libnimCodecs.dylib")
+
+	# set the install paths for libraries and binaries
+	# ------------------------------------------------
+	set(INSTALL_NAME_VALUE "@executable_path/../lib")
+	set(LIB_INSTALL_PATH "./lib/")
+	set(BIN_INSTALL_PATH "./bin/")
+	set(INCLUDE_FILES_INSTALL_PATH "include/")
+elseif(CREATE_OF_BUILD)
+        set(OF_OPENNI_DATA_DIR "../../../data/openni/")
+	
+	set(OPENNI_BASE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../OpenNI/")
+        set(OPENNI_NIMCODECS_LIB_NAME "${CMAKE_CURRENT_SOURCE_DIR}/../OpenNI_openFrameworks/lib/libnimCodecs.dylib")  
+        set(OPENNI_LIB_NAME "${CMAKE_CURRENT_SOURCE_DIR}/../OpenNI_openFrameworks/lib/libOpenNI.dylib")
+        set(LIBJPEG_LIB_NAME "${CMAKE_CURRENT_SOURCE_DIR}/../OpenNI_openFrameworks/lib/libJPEG.dylib")
+        set(OPENNI_NIMCODECS_LIB_NAME "${CMAKE_CURRENT_SOURCE_DIR}/../OpenNI_openFrameworks/lib/libnimCodecs.dylib")
+
+        # set the install paths for libraries and binaries
+        # ------------------------------------------------
+	set(INSTALL_NAME_VALUE "@executable_path/${OF_OPENNI_DATA_DIR}lib")
+        set(LIB_INSTALL_PATH "./lib/")
+        set(BIN_INSTALL_PATH "./bin/")
+        set(INCLUDE_FILES_INSTALL_PATH "include/")
+	set(CMAKE_OSX_ARCHITECTURES "i386;x86_64")
 endif()
 
 set(XNCORE_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Include/")
