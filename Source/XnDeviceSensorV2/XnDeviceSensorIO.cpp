@@ -430,6 +430,18 @@ XnStatus XnSensorIO::EnumerateSensors(XnConnectionString* aConnectionStrings, Xn
 			strcpy(aConnectionStrings[nCount], it.Key());
 		}
 	}
+	
+	if (!bIsPresent)
+	{
+		// Find the KINECT
+		nRetVal = xnUSBIsDevicePresent(
+				 XN_SENSOR_VENDOR_ID_KINECT
+				,XN_SENSOR_KINECT_PRODUCT_ID
+				,USB_DEVICE_EXTRA_PARAM
+				,&bIsPresent
+		);
+		XN_IS_STATUS_OK(nRetVal);
+	}
 
 	if (nCount > *pnCount)
 	{

@@ -35,7 +35,11 @@ if(CREATE_TEST_BUILD)
 	set(INCLUDE_FILES_INSTALL_PATH "include/")
 elseif(CREATE_OF_BUILD)
         set(OF_OPENNI_DATA_DIR "../../../data/openni/")
+<<<<<<< HEAD
 	#set(OF_OPENNI_DATA_DIR "./../../../../../../../addons/ofxOpenNI/")	
+=======
+	
+>>>>>>> d12a651f92a21bca4e472cc03d52a43183f89132
 	set(OPENNI_BASE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../OpenNI/")
         set(OPENNI_NIMCODECS_LIB_NAME "${CMAKE_CURRENT_SOURCE_DIR}/../OpenNI_openFrameworks/lib/libnimCodecs.dylib")  
         set(OPENNI_LIB_NAME "${CMAKE_CURRENT_SOURCE_DIR}/../OpenNI_openFrameworks/lib/libOpenNI.dylib")
@@ -44,9 +48,14 @@ elseif(CREATE_OF_BUILD)
 
         # set the install paths for libraries and binaries
         # ------------------------------------------------
+<<<<<<< HEAD
 	#set(INSTALL_NAME_VALUE "@executable_path/${OF_OPENNI_DATA_DIR}lib/osx")
 	set(INSTALL_NAME_VALUE "@executable_path/${OF_OPENNI_DATA_DIR}lib")
         set(LIB_INSTALL_PATH "./openni/lib/")
+=======
+	set(INSTALL_NAME_VALUE "@executable_path/${OF_OPENNI_DATA_DIR}lib")
+        set(LIB_INSTALL_PATH "./lib/")
+>>>>>>> d12a651f92a21bca4e472cc03d52a43183f89132
         set(BIN_INSTALL_PATH "./bin/")
         set(INCLUDE_FILES_INSTALL_PATH "include/")
 	set(CMAKE_OSX_ARCHITECTURES "i386;x86_64")
