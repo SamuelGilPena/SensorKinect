@@ -37,10 +37,10 @@ elseif(CREATE_OF_BUILD)
         set(OF_OPENNI_DATA_DIR "../../../data/openni/")
 	#set(OF_OPENNI_DATA_DIR "./../../../../../../../addons/ofxOpenNI/")	
 	set(OPENNI_BASE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../OpenNI/")
-        set(OPENNI_NIMCODECS_LIB_NAME "${CMAKE_CURRENT_SOURCE_DIR}/../OpenNI_openFrameworks/lib/libnimCodecs.dylib")  
-        set(OPENNI_LIB_NAME "${CMAKE_CURRENT_SOURCE_DIR}/../OpenNI_openFrameworks/lib/libOpenNI.dylib")
-        set(LIBJPEG_LIB_NAME "${CMAKE_CURRENT_SOURCE_DIR}/../OpenNI_openFrameworks/lib/libJPEG.dylib")
-        set(OPENNI_NIMCODECS_LIB_NAME "${CMAKE_CURRENT_SOURCE_DIR}/../OpenNI_openFrameworks/lib/libnimCodecs.dylib")
+        set(OPENNI_NIMCODECS_LIB_NAME "${CMAKE_CURRENT_SOURCE_DIR}/../OpenNI_openFrameworks/openni/lib/libnimCodecs.dylib")  
+        set(OPENNI_LIB_NAME "${CMAKE_CURRENT_SOURCE_DIR}/../OpenNI_openFrameworks/openni/lib/libOpenNI.dylib")
+        set(LIBJPEG_LIB_NAME "${CMAKE_CURRENT_SOURCE_DIR}/../OpenNI_openFrameworks/openni/lib/libJPEG.dylib")
+        set(OPENNI_NIMCODECS_LIB_NAME "${CMAKE_CURRENT_SOURCE_DIR}/../OpenNI_openFrameworks/openni/lib/libnimCodecs.dylib")
 
         # set the install paths for libraries and binaries
         # ------------------------------------------------
